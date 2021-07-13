@@ -26,14 +26,26 @@ python zhihu-publisher.py --input="./Data/一个测试文档.md"
    然后系统要求输入密码，直接按回车表示不设密码（设置也可以）
 
    重复密码时也是直接回车，之后提示你shh key已经生成成功。
+   
+   在C盘下用户文件夹下面找到主机名文件夹，在下面找到.ssh文件夹，其中有id_rsa文件，复制里面的内容。
+   
+   进入github网站设置页面，点击左侧SSH and GBG keys，点击New ssh key,将上面的复制的pub文件中的内容复制进去。
+   
+   输入 ssh -T git@github.com 命令验证是否成功。
 
-5. `git config --global user.name "your name"`（代表github用户名）
+5. 接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。
+
+   `git config --global user.name "your name"`（代表github用户名）
+   
    `git config --global user.email "your_email@youremail.com"`（github邮箱）
+   
+   运行 `git config --list` 命令，可以查看刚才绑定的用户名和邮箱。
    
 6. 进入要上传的仓库，添加远程地址
    `git remote add origin git@github.com:XyJianChen/xy.git`
 
 7. 上传到github
+
    `git add -A` (添加到缓存区)
 
    `git commit -m "first commit"`(提交到仓库)
