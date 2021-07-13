@@ -8,11 +8,11 @@
 
 - 引入老师-学生策略
 
-  <img src="https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210629105858866.png" alt="image-20210629105858866" style="zoom:50%;" />
+  <img src="https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210629105858866.png?raw=true" alt="image-20210629105858866" style="zoom:50%;" />
 
 ## [2020.10] AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE(ViT). 
 
-![image-20210707093516585](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210707093516585.png)
+<img src="https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210707093516585.png?raw=true" alt="image-20210707093516585" style="zoom:80%;" />
 
 在越大的数据集上预训练，取得的效果越好；
 
@@ -22,44 +22,44 @@
 
 动机：解决尺度问题和计算复杂度高的问题
 
-<img src="https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210707095550335.png" alt="image-20210707095550335" style="zoom: 80%;" />
+<img src="https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210707095550335.png?raw=true" alt="image-20210707095550335" style="zoom: 80%;" />
 
 ### Shifted Window based MSA
 
-![image-20210708154850423](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210708154850423.png)
+![image-20210708154850423](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210708154850423.png?raw=true)
 
 上图中红色区域是window，灰色区域是patch。W-MSA将输入图片划分成不重合的windows，然后在不同的window内进行self-attention计算。假设一个图片有h*w的patches，每个window包含MxM个patches，那么MSA和W-MSA的计算复杂度分别为：
 
 每个windows内部分别计算各个patch之间的权重
 
-![image-20210708163453248](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210708163453248.png)
+![image-20210708163453248](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210708163453248.png?raw=true)
 
 由于window的patch数量远小于图片patch数量，W-MSA的计算复杂度和图像尺寸呈线性关系。
 
 **要保证可以并行计算，需要窗口的大小一致**
 
-![image-20210708163756829](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210708163756829.png)
+![image-20210708163756829](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210708163756829.png?raw=true)
 
-![preview](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/v2-0fc6b9b6753a5416f6cf3d7361c967d1_r.jpg)
+![preview](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//v2-0fc6b9b6753a5416f6cf3d7361c967d1_r.jpg?raw=true)
 
 ### 整体结构
 
-![image-20210708152720263](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210708152720263.png)
+![image-20210708152720263](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210708152720263.png?raw=true)
 
 图像输入为H/4*W/4的patch块，每个块的特征维度是4x4x3=48，在stage1部分，先通过linear embedding将patch的特征维度变成C，然后送到Swin Transformer Block，在接下来的stage，将输入按照2x2的相邻patch合并，每个patch的特征维度变成4C，patch块的数量变成H/8xW/8，
 
 ## [2021.07] CSWin Transformer: A General Vision Transformer Backbone with Cross-ShapedWindows
 动机：global self-attention is very expensive to compute whereas local self-attention often limits the field of interactions of each token
 
-![image-20210709103719401](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210709103719401.png)
+![image-20210709103719401](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210709103719401.png?raw=true)
 
 如上图所示，输入特征X由HxW个维度为C的patch组成，首先经过线性变换，得到K个heads，每个head会在水平或者垂直条带内部做local自注意力计算。
 
-![image-20210709151024974](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210709151024974.png)
+![image-20210709151024974](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210709151024974.png?raw=true)
 
 计算公式如上图所示，对于水平条带注意力机制，X被分解成不重叠的宽度为sw的条带，每一个条带包含sw*W个tokens，sw表示条带的宽度，计算每个条带内部的自注意力，然后concatenate起来，得到对应head的输出。
 
-![image-20210709151729531](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210709151729531.png)
+![image-20210709151729531](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210709151729531.png?raw=true)
 
 整个X的自注意力计算，有各个head的结果concat起来构成。
 
@@ -67,15 +67,15 @@
 
 ### 整体结构
 
-![image-20210709103814848](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210709103814848.png)
+![image-20210709103814848](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210709103814848.png?raw=true)
 
 **卷积下采样操作**：采用**CvT算法**方式，对于输入的图片，用卷积核对图片进行卷积操作，得到tokens，每个token的维度就是卷积核的通道数，然后在接下来的每一个阶段，用卷积核进行下采样操作，取代线性变换的操作。
 
-![image-20210709152507826](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210709152507826.png)
+![image-20210709152507826](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210709152507826.png?raw=true)
 
 ## [2021.03] CvT: Introducing Convolutions to Vision Transformers
 
-![image-20210709153255076](https://raw.githubusercontent.com/haodongze/markdown4zhihu/master/Data/视觉transformer论文笔记/image-20210709153255076.png)
+![image-20210709153255076](https://github.com/haodongze/markdown4zhihu/blob/master/Data/%E8%A7%86%E8%A7%89transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0.assets//image-20210709153255076.png?raw=true)
 
 
 

@@ -12,7 +12,7 @@
 
 ## [2020.10] AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE(ViT). 
 
-![image-20210707093516585](视觉transformer论文笔记.assets/image-20210707093516585.png)
+<img src="视觉transformer论文笔记.assets/image-20210707093516585.png" alt="image-20210707093516585" style="zoom:80%;" />
 
 在越大的数据集上预训练，取得的效果越好；
 
