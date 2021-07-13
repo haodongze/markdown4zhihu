@@ -14,7 +14,7 @@ python zhihu-publisher.py --input="./Data/一个测试文档.md"
 
 4. OK，all set. 在Data目录下，你可以看到一个测试文档_for_zhihu.md的文件，在GitHub同步后将其上传到知乎编辑器。
 
-### github上传
+### Github上传
 现在需要将Data下的图片文件夹和markdown文件（可选）同步到github中。
 1. 安装git软件，可以参考其他教程。
 2. 进入仓库所在的文件夹，运行git bash命令（windows用户）。
