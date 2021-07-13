@@ -20,20 +20,22 @@ python zhihu-publisher.py --input="./Data/一个测试文档.md"
 2. 进入仓库所在的文件夹，运行git bash命令（windows用户）。
 3. 运行 `git init` 命令。
 4. 为了把本地的仓库传到github，还需要配置ssh key。不配置怎么能知道是不是本人或者本人机器呢？（电话线的作用）
-`ssh-keygen -t rsa -C "your_email@youremail.com"`
-直接点回车，说明会在默认文件id_rsa上生成ssh key。 
+   `ssh-keygen -t rsa -C "your_email@youremail.com"`
+   直接点回车，说明会在默认文件id_rsa上生成ssh key。 
 
-然后系统要求输入密码，直接按回车表示不设密码（设置也可以）
+   然后系统要求输入密码，直接按回车表示不设密码（设置也可以）
 
-重复密码时也是直接回车，之后提示你shh key已经生成成功。
+   重复密码时也是直接回车，之后提示你shh key已经生成成功。
+
 5. `git config --global user.name "your name"`（代表github用户名）
-
-`git config --global user.email "your_email@youremail.com"`（github邮箱）
+   `git config --global user.email "your_email@youremail.com"`（github邮箱）
+   
 6. 进入要上传的仓库，添加远程地址
-`git remote add origin git@github.com:XyJianChen/xy.git`
+   `git remote add origin git@github.com:XyJianChen/xy.git`
+
 7. 上传到github
-`git add -A` (添加到缓存区)
+   `git add -A` (添加到缓存区)
 
-`git commit -m "first commit"`(提交到仓库)
+   `git commit -m "first commit"`(提交到仓库)
 
-`git push origin master` (将本地仓库推送到远程服务器github上)
+   `git push origin master` (将本地仓库推送到远程服务器github上)
