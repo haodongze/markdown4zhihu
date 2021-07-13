@@ -42,7 +42,7 @@ python zhihu-publisher.py --input="./Data/一个测试文档.md"
    运行 `git config --list` 命令，可以查看刚才绑定的用户名和邮箱。
    
 6. 进入要上传的仓库，添加远程地址
-   `git remote add origin git@github.com:XyJianChen/xy.git`
+   `git remote add origin git@github.com:###/###.git`
 
 7. 上传到github
 
