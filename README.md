@@ -12,7 +12,7 @@
 
 python zhihu-publisher.py --input="./Data/一个测试文档.md"
 
-4. OK，all set. 在Data目录下，你可以看到一个一个测试文档_for_zhihu.md的文件。
+4. OK，all set. 在Data目录下，你可以看到一个测试文档_for_zhihu.md的文件，在GitHub同步后将其上传到知乎编辑器。
 
 ### github上传
 现在需要将Data下的图片文件夹和markdown文件（可选）同步到github中。
